@@ -1,171 +1,92 @@
-Of course. Here is the revised `README.md` in English, incorporating the 80/20 principle and providing direct links to online datasets for each micro-project.
 
-This structure makes your repository a powerful tool for guided learning and a very practical portfolio.
 
------
+# Data Engineering & Databases Portfolio
 
-# Data Engineering & Databases Repository ⚙️
 
-Welcome to my personal repository dedicated to the world of data engineering and database management. This project serves a dual purpose:
+## SQL & Relational Databases (PostgreSQL)
 
-1.  **Professional Portfolio**: To showcase my skills and tangible projects in data modeling, storage, manipulation, and management.
-2.  **Learning Guide**: To structure my personal development path by separating skills into **Beginner** and **Advanced** tiers, with a specific project to validate each level.
+For a data scientist, the **80/20 of SQL is mastering data retrieval and aggregation**. The vast majority of daily tasks, from simple data extraction to complex feature engineering, can be accomplished with a solid command of `SELECT` statements, various `JOIN` types, and `GROUP BY` clauses. Advanced functions are powerful but are needed far less frequently than these core workhorses.
 
-This README acts as a living document and a roadmap for my journey.
+My SQL skills are demonstrated through an **[Advanced Sales Analysis](https://www.google.com/search?q=./1_SQL_Relational_Modeling/Advanced_Project/)** project, where I used window functions and CTEs to identify top-selling products.
 
------
+### 🌱 Beginner
 
-## 1\. SQL and Relational Modeling
+  - [x] `SELECT`, `FROM`, `WHERE` to query data
+  - [x] `INSERT`, `UPDATE`, `DELETE` to manipulate data
+  - [x] `ORDER BY` to sort results
+  - [x] `CREATE TABLE` with basic data types (`VARCHAR`, `INT`, `DATE`)
 
-### 🌱 Beginner Level
+### 🚧 Intermediate
 
-This level focuses on the essential commands for interacting with any relational database.
+  - [x] `JOIN` operations (`INNER`, `LEFT`, `RIGHT`) to combine tables
+  - [x] `GROUP BY` with aggregate functions (`COUNT`, `SUM`, `AVG`)
+  - [x] Basic subqueries
+  - [ ] Data integrity with constraints (`PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL`)
+  - [ ] `HAVING` clause to filter aggregated results
 
-#### 🎯 80/20 Objectives:
+### 🚀 Advanced
 
-  - [ ] **`SELECT`, `FROM`, `WHERE`**: Fetching and filtering data.
-  - [ ] **`JOIN`**: Combining data from multiple tables (`INNER`, `LEFT`).
-  - [ ] **`GROUP BY` & `COUNT`, `SUM`, `AVG`**: Aggregating data.
-  - [ ] **`ORDER BY`**: Sorting results.
-  - [ ] **`INSERT`, `UPDATE`, `DELETE`**: Manipulating records.
-  - [ ] **`CREATE TABLE`**: Defining a simple table with primary and foreign keys.
-
-💡 **Micro-Project: Library Database**
-
-> **Objective:** Create a mini-system to manage books and authors.
->
-> 1.  **Dataset:** For this project, you can create the data yourself. It's a great exercise in data modeling.
-> 2.  **Task:**
->       * Create two tables: `Authors` (author\_id, author\_name) and `Books` (book\_id, title, author\_id).
->       * Insert a few of your favorite authors and their books.
->       * Write a query that returns a list of all books with their author's name.
+  - [ ] Window Functions (`ROW_NUMBER`, `RANK`, `LEAD`, `LAG`)
+  - [ ] Common Table Expressions (CTEs) for query readability
+  - [ ] `EXPLAIN` and `EXPLAIN ANALYZE` to analyze query performance
+  - [ ] Transaction management (`BEGIN`, `COMMIT`, `ROLLBACK`)
+  - [ ] Indexing strategies (B-Tree) and performance tuning
+  - [ ] Temporary tables
 
 -----
 
-### 🚀 Advanced Level
+## NoSQL Databases (MongoDB)
 
-This level demonstrates a deeper understanding of SQL for complex analysis and performance.
+The **80/20 principle for MongoDB in data science involves efficiently querying nested documents and preparing data for analysis**. Mastering basic `find` queries to filter data and understanding the structure of the Aggregation Pipeline (especially `$match`, `$group`, and `$unwind`) provides the tools to handle the majority of semi-structured data challenges without getting lost in administrative complexities.
 
-#### 🎯 80/20 Objectives:
+My proficiency with NoSQL is showcased in a project involving a **[Restaurant Grade Aggregation Pipeline](https://www.google.com/search?q=./2_NoSQL_MongoDB/Advanced_Project/)**. This required building a multi-stage pipeline to analyze nested data.
 
-  - [ ] **Window Functions (`OVER PARTITION BY`)**: Calculating over subsets of data (e.g., `ROW_NUMBER`, `RANK`, `LEAD`, `LAG`).
-  - [ ] **Common Table Expressions (CTEs - `WITH ... AS`)**: Writing clean and readable complex queries.
-  - [ ] **Advanced Subqueries**: Using subqueries in `SELECT`, `FROM`, and `WHERE` clauses effectively.
-  - [ ] **Transactions (`BEGIN`, `COMMIT`, `ROLLBACK`)**: Ensuring data integrity during multi-step operations.
-  - [ ] **`EXPLAIN`**: Analyzing the query execution plan to identify bottlenecks.
-  - [ ] **Indexing**: Understanding and creating indexes to speed up read operations.
+### 🌱 Beginner
 
-💡 **Micro-Project: Sales Analysis**
+  - [ ] Understanding the Document/Collection model
+  - [ ] `insertOne()` and `insertMany()` to create documents
+  - [ ] Basic `find()` queries to retrieve documents
+  - [ ] `updateOne()` with the `$set` operator to modify fields
 
-> **Objective:** Analyze a sales dataset to extract complex insights.
->
-> 1.  **Dataset:** Use the **Superstore Sales Dataset** from Kaggle. It's a classic and perfect for this kind of analysis.
->       * **Link:** [Kaggle Superstore Sales Dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
-> 2.  **Task:**
->       * Load the data into a `sales` table in PostgreSQL.
->       * Write a single query using a CTE and a window function to find the top 3 best-selling products within each `Category` for the year 2017.
->       * Run `EXPLAIN ANALYZE` on your query, create a relevant index (e.g., on the order date and category), and show how the execution plan improves.
+### 🚧 Intermediate
 
------
+  - [ ] Using projections to return specific fields
+  - [ ] Advanced query operators (`$in`, `$gt`, `$ne`)
+  - [ ] Handling nested documents and arrays
+  - [ ] Array update operators (`$push`, `$pull`)
+  - [ ] Basic indexing (single-field)
 
-## 2\. NoSQL Databases: MongoDB
+### 🚀 Advanced
 
-### 🌱 Beginner Level
-
-This level covers the fundamentals of the document-oriented model.
-
-#### 🎯 80/20 Objectives:
-
-  - [ ] **Understand the Document/Collection model**.
-  - [ ] **`find()`**: Querying for documents with simple filters (`{ key: "value" }`).
-  - [ ] **Projections**: Selecting specific fields to return in a query.
-  - [ ] **`insertOne()` & `insertMany()`**: Inserting documents.
-  - [ ] **`updateOne()` with `$set`**: Updating specific fields within a document.
-
-💡 **Micro-Project: Restaurant Finder**
-
-> **Objective:** Create a collection to store and query restaurant data.
->
-> 1.  **Dataset:** Use the **Sample MongoDB Restaurants Dataset**. This is a standard BSON dump used in MongoDB's own documentation.
->       * **Link:** Download the `restaurants.json` file from this [GitHub Gist](https://www.google.com/search?q=https://gist.github.com/jgassen/5903550). You can import it using `mongoimport`.
-> 2.  **Task:**
->       * Import the `restaurants.json` data into a `restaurants` collection.
->       * Write a query to find all restaurants in the "Manhattan" borough that serve "Italian" cuisine.
->       * Write another query, but this time return only the `name` and `address` fields for the results.
+  - [ ] The Aggregation Framework (`$match`, `$group`, `$unwind`, `$sort`)
+  - [ ] Compound indexing strategies
+  - [ ] Performance tuning and analyzing query execution
+  - [ ] Using `$lookup` to perform joins between collections
 
 -----
 
-### 🚀 Advanced Level
+## Geospatial Data (PostGIS)
 
-This level focuses on data aggregation and performance optimization in MongoDB.
+For most data science applications, the **80/20 of PostGIS is performing spatial joins and distance calculations**. Knowing how to efficiently determine which points are inside which polygons (e.g., `ST_Contains`) and calculating distances between features (`ST_Distance`) unlocks the answers to the most common location-based business questions, from customer mapping to proximity analysis.
 
-#### 🎯 80/20 Objectives:
+I applied foundational geospatial concepts in a project to **[Find Nearby UK Pubs](https://www.google.com/search?q=./3_PostGIS_Spatial_Analysis/Beginner_Project/)**, which involved storing and querying over 50,000 geographic points.
 
-  - [ ] **Aggregation Pipeline**: Mastering the key stages (`$match`, `$group`, `$sort`, `$project`).
-  - [ ] **Querying Arrays**: Using operators like `$in`, `$all`, and `$elemMatch`.
-  - [ ] **Indexing**: Creating single-field and compound indexes to optimize query performance.
-  - [ ] **Advanced Update Operators**: Using `$inc` (increment), `$push` (add to array), `$pull` (remove from array).
+### 🌱 Beginner
 
-💡 **Micro-Project: Analyzing Restaurant Grades**
+  - [x] Understanding core geometry types (`POINT`, `LINESTRING`, `POLYGON`)
+  - [ ] Creating a table with a `geometry` column
+  - [ ] Ingesting data using `ST_MakePoint` or `ST_GeomFromText`
+  - [ ] Basic understanding of Coordinate Reference Systems (CRS)
 
-> **Objective:** Use the Aggregation Pipeline to analyze restaurant inspection grades.
->
-> 1.  **Dataset:** Use the same **Sample MongoDB Restaurants Dataset** from the beginner project. The `grades` array is perfect for this.
-> 2.  **Task:**
->       * Build an Aggregation Pipeline that calculates the average score (`grades.score`) for each borough.
->       * The pipeline should first `$unwind` the `grades` array.
->       * Then, it should `$group` the documents by `borough` and calculate the average score using `$avg`.
->       * Finally, `$sort` the results to show the borough with the highest average score first.
+### 🚧 Intermediate
 
------
+  - [ ] Spatial querying with `ST_Distance`
+  - [ ] Relational functions like `ST_Contains`, `ST_Intersects`, `ST_Within`
+  - [ ] Using `ST_DWithin` for optimized distance searches
 
-## 3\. Geospatial Data with PostGIS
+### 🚀 Advanced
 
-### 🌱 Beginner Level
-
-This level covers the basics of storing and querying spatial data.
-
-#### 🎯 80/20 Objectives:
-
-  - [ ] **Geometry Types**: Knowing `POINT`, `LINESTRING`, and `POLYGON`.
-  - [ ] **Creating a Geospatial Table**: Using a `geometry` type column.
-  - [ ] **`ST_Distance()`**: Calculating the distance between two geometries.
-  - [ ] **`ST_Contains()` / `ST_Within()`**: Checking for spatial relationships.
-
-💡 **Micro-Project: Find Nearby Pubs**
-
-> **Objective:** Store points of interest and find the ones closest to a specific location.
->
-> 1.  **Dataset:** Use the **Open Pubs dataset from GetTheData**. It's a simple CSV with latitude and longitude.
->       * **Link:** [GetTheData - Open Pubs](https://www.getthedata.com/open-pubs)
-> 2.  **Task:**
->       * Create a `pubs` table with a `geom` column of type `geometry(Point, 4326)`.
->       * Import the data, using `ST_MakePoint(longitude, latitude)` to create the geometry.
->       * Pick a point in the UK and write a query to find the 5 nearest pubs to that location using `ST_Distance`.
-
------
-
-### 🚀 Advanced Level
-
-This level focuses on spatial analysis and performance.
-
-#### 🎯 80/20 Objectives:
-
-  - [ ] **Coordinate Systems (SRID)** and `ST_Transform()`: Understanding and converting data between different coordinate reference systems.
-  - [ ] **Spatial Indexes (GiST)**: Creating a spatial index and understanding its impact on performance.
-  - [ ] **Spatial Analysis Functions**: Using `ST_Buffer` (create a buffer zone), `ST_Union` (merge geometries), and `ST_Intersects` (check for overlap).
-
-💡 **Micro-Project: London Tube Stations within Boroughs**
-
-> **Objective:** Combine point and polygon data to perform a spatial join.
->
-> 1.  **Datasets:**
->       * **Polygons:** London Boroughs boundaries from the **London Datastore**. Download the Shapefile.
->           * **Link:** [London Datastore - Borough Boundaries](https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london)
->       * **Points:** A list of London Tube stations with coordinates.
->           * **Link:** [Kaggle - London Tube Stations](https://www.google.com/search?q=https://www.kaggle.com/datasets/boardpack/london-tube-stations)
-> 2.  **Task:**
->       * Import both datasets into PostGIS tables (use `shp2pgsql` for the shapefile).
->       * Ensure both tables use the same SRID, using `ST_Transform()` if necessary.
->       * Write a query that counts how many tube stations (`points`) are located within each London borough (`polygon`). This will require a spatial join using `ST_Contains` or `ST_Within`.
->       * Ensure your spatial columns have GiST indexes.
+  - [ ] Transforming data between different CRSs (`ST_Transform`, SRID)
+  - [ ] Performance optimization using Spatial Indexes (GiST)
+  - [ ] Analytic functions like `ST_Buffer`, `ST_Union`, `ST_Centroid`
+  - [ ] Combining spatial and non-spatial queries for complex analysis
